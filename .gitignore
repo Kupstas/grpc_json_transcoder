@@ -1,0 +1,17 @@
+node_modules
+
+# Logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Macos preview
+*.DS_Store
+
+# Editors
+.idea
+.vscode

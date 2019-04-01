@@ -1,0 +1,28 @@
+version: '3'
+services:
+  affiliate:
+    build:
+        context: .
+        dockerfile: affiliate/Dockerfile
+    ports:
+         - "50061:50061"
+  http-server:
+    build:
+      context: .
+      dockerfile: http/Dockerfile
+    ports:
+      - "8081:8081"
+  affiliate-envoy:
+    build:
+      context: .
+      dockerfile: envoy2/Dockerfile.envoy
+    volumes:
+      - ./envoy2/config.yaml:/etc/config.yaml
+      - ./envoy2/proto.pb:/tmp/envoy/proto.pb
+  http-server-envoy:
+    build:
+      context: .
+      dockerfile: envoy1/Dockerfile.envoy
+    volumes:
+      - ./envoy1/config.yaml:/etc/config.yaml
+      - ./envoy1/proto.pb:/tmp/envoy/proto.pb

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+package services;
+
+service Quotes {
+  rpc getQuotes (GetQuotesRequest) returns (GetQuotesResponse) {
+    option (google.api.http) = {
+      post: "/say"
+    };
+  }
+}
+
+message GetQuotesRequest {
+  string message = 1;
+}
+
+message GetQuotesResponse {
+  string message = 1;
+}

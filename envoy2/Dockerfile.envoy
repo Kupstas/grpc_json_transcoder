@@ -1,0 +1,4 @@
+
+FROM envoyproxy/envoy-dev:latest
+
+CMD /usr/local/bin/envoy -c /etc/config.yaml --log-level error --service-cluster http-proxy

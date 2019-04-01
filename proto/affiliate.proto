@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package services;
+
+service Affiliate {
+    rpc getAffiliate (GetAffiliateRequest) returns (GetAffiliateResponse) {}
+}
+
+message GetAffiliateRequest {
+    string message = 1;
+}
+
+message GetAffiliateResponse {
+    string message = 1;
+}
